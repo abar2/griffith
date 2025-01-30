@@ -13,3 +13,8 @@ echo \
 apt update
 
 apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+docker plugin install rclone/docker-volume-rclone:amd64 --grant-all-permissions --alias rclone
+docker plugin disable rclone
+docker plugin set rclone RCLONE_VERBOSE=2 config=/etc/rclone args="--vfs-cache-mode=full"
+docker plugin enable rclone
