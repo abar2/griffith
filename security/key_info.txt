@@ -2,4 +2,4 @@
 stream.key
 
 # Path to the key file (where FFmpeg finds the key for encryption)
-encryption/stream.key
+/tmp/html/stream.key

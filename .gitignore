@@ -1,3 +1,4 @@
 content/*
 */.htpasswd
 */stream.key
+rclone.conf
