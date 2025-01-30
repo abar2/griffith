@@ -1,0 +1,20 @@
+services:
+  griffith:
+    build:
+      context: .
+    container_name: griffith
+    volumes:
+      - media-9967c027:/mnt/media-9967c027
+    ports:
+      - "8080:8080"
+      - "1935:1935"
+    restart: unless-stopped
+    environment:
+      - PLAY_FILE=${PLAY_FILE}
+
+volumes:
+  media-9967c027:
+    driver: rclone
+    driver_opts:
+      remote: 'media-9967c027-crypt:/'
+      vfs_cache_mode: writes
